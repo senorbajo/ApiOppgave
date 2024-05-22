@@ -1,4 +1,4 @@
-package com.akva.entity;
+package com.akva.model;
 
 import jakarta.persistence.Entity;
 

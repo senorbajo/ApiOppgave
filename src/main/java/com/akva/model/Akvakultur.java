@@ -1,144 +1,148 @@
-package com.akva.dto;
+package com.akva.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonProperty;
-
+import jakarta.persistence.ElementCollection;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import java.util.List;
 
-@JsonIgnoreProperties(ignoreUnknown = true)
-public class AkvakulturDTO {
+@Entity
+public class Akvakultur {
 
+    @Id
     private String id;
     private Long versionId;
     private String openNr;
     private String typeName;
     private String typeValue;
     private String name;
-    private List<BusinessTypeDTO> businessTypes;
     private String officialSourceType;
-    private List<AddressDTO> addresses;
     private String versionValidFrom;
     private String versionValidUntil;
     private String versionRegisteredTime;
     private String versionRegisteredBy;
     private String status;
 
-    // Getters and setters
+    @ElementCollection
+    private List<BusinessType> businessTypes;
 
-    public String getId() {
-        return id;
-    }
+    @ElementCollection
+    private List<Address> addresses;
 
     public void setId(String id) {
-        this.id = id;
     }
 
-    public Long getVersionId() {
-        return versionId;
-    }
+    // Getters and setters
+
 
     public void setVersionId(Long versionId) {
         this.versionId = versionId;
-    }
-
-    public String getOpenNr() {
-        return openNr;
     }
 
     public void setOpenNr(String openNr) {
         this.openNr = openNr;
     }
 
-    public String getTypeName() {
-        return typeName;
-    }
-
     public void setTypeName(String typeName) {
         this.typeName = typeName;
-    }
-
-    public String getTypeValue() {
-        return typeValue;
     }
 
     public void setTypeValue(String typeValue) {
         this.typeValue = typeValue;
     }
 
-    public String getName() {
-        return name;
-    }
-
     public void setName(String name) {
         this.name = name;
-    }
-
-    public List<BusinessTypeDTO> getBusinessTypes() {
-        return businessTypes;
-    }
-
-    public void setBusinessTypes(List<BusinessTypeDTO> businessTypes) {
-        this.businessTypes = businessTypes;
-    }
-
-    public String getOfficialSourceType() {
-        return officialSourceType;
     }
 
     public void setOfficialSourceType(String officialSourceType) {
         this.officialSourceType = officialSourceType;
     }
 
-    public List<AddressDTO> getAddresses() {
-        return addresses;
-    }
-
-    public void setAddresses(List<AddressDTO> addresses) {
-        this.addresses = addresses;
-    }
-
-    public String getVersionValidFrom() {
-        return versionValidFrom;
-    }
-
     public void setVersionValidFrom(String versionValidFrom) {
         this.versionValidFrom = versionValidFrom;
-    }
-
-    public String getVersionValidUntil() {
-        return versionValidUntil;
     }
 
     public void setVersionValidUntil(String versionValidUntil) {
         this.versionValidUntil = versionValidUntil;
     }
 
-    public String getVersionRegisteredTime() {
-        return versionRegisteredTime;
-    }
-
     public void setVersionRegisteredTime(String versionRegisteredTime) {
         this.versionRegisteredTime = versionRegisteredTime;
-    }
-
-    public String getVersionRegisteredBy() {
-        return versionRegisteredBy;
     }
 
     public void setVersionRegisteredBy(String versionRegisteredBy) {
         this.versionRegisteredBy = versionRegisteredBy;
     }
 
-    public String getStatus() {
-        return status;
-    }
-
     public void setStatus(String status) {
         this.status = status;
     }
 
-    @JsonIgnoreProperties(ignoreUnknown = true)
-    public static class BusinessTypeDTO {
+    public String getId() {
+        return id;
+    }
+
+    public Long getVersionId() {
+        return versionId;
+    }
+
+    public String getOpenNr() {
+        return openNr;
+    }
+
+    public String getTypeName() {
+        return typeName;
+    }
+
+    public String getTypeValue() {
+        return typeValue;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getOfficialSourceType() {
+        return officialSourceType;
+    }
+
+    public String getVersionValidFrom() {
+        return versionValidFrom;
+    }
+
+    public String getVersionValidUntil() {
+        return versionValidUntil;
+    }
+
+    public String getVersionRegisteredTime() {
+        return versionRegisteredTime;
+    }
+
+    public String getVersionRegisteredBy() {
+        return versionRegisteredBy;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public List<BusinessType> getBusinessTypes() {
+        return businessTypes;
+    }
+
+    public void setBusinessTypes(List<BusinessType> businessTypes) {
+        this.businessTypes = businessTypes;
+    }
+
+    public List<Address> getAddresses() {
+        return addresses;
+    }
+
+    public void setAddresses(List<Address> addresses) {
+        this.addresses = addresses;
+    }
+
+    public static class BusinessType {
         private String value;
         private String name;
 
@@ -161,8 +165,7 @@ public class AkvakulturDTO {
         }
     }
 
-    @JsonIgnoreProperties(ignoreUnknown = true)
-    public static class AddressDTO {
+    public static class Address {
         private Long id;
         private String type;
         private String value;
@@ -257,3 +260,4 @@ public class AkvakulturDTO {
         }
     }
 }
+
