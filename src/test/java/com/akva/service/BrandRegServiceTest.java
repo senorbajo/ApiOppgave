@@ -1,6 +1,5 @@
 package com.akva.service;
 
-import com.akva.dto.BrandRegDTO;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;

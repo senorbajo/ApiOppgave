@@ -12,8 +12,5 @@ public class AppConfig {
         return new RestTemplate();
     }
 
-    @Bean
-    public RestTemplate brandApiClient() {
-        return new RestTemplate();
-    }
+
 }

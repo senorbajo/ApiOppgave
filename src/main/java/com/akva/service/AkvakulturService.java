@@ -1,7 +1,7 @@
 package com.akva.service;
 
 import com.akva.dto.AkvakulturDTO;
-import com.akva.model.Akvakultur;
+import com.akva.domain.Akvakultur;
 import com.akva.repository.AkvakulturRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -81,7 +81,7 @@ public class AkvakulturService {
     }
 
     public Optional<Akvakultur> getAkvakulturByOrgNumber(String orgNumber) {
-        return akvakulturRepository.findById(Long.valueOf(orgNumber));
+        return akvakulturRepository.findById(orgNumber);
     }
 }
 
